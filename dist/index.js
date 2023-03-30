@@ -9687,7 +9687,7 @@ __nccwpck_require__.a(__webpack_module__, async (__webpack_handle_async_dependen
 
 try {
   const prNumber = _actions_github__WEBPACK_IMPORTED_MODULE_1__.context.payload.pull_request.number;
-  const reviews = await _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(env.GITHUB_TOKEN)
+  const reviews = await _actions_github__WEBPACK_IMPORTED_MODULE_1__.getOctokit(process.env.GITHUB_TOKEN)
     .request('GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews', {
       ..._actions_github__WEBPACK_IMPORTED_MODULE_1__.context.repo,
       pull_number: prNumber,
