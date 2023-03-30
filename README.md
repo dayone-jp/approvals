@@ -1,15 +1,25 @@
-# github-api
+# Approvals counter
 
-To install dependencies:
+This action counts amount of approvals of the PR
 
-```bash
-bun install
+## How to use 
+
+You can check that PR has required amount of approvals like this
+
+```yml
+name: 'Approvals'
+description: 'Check that PR has 2 approvals'
+outputs:
+  approved:
+    description: 'If PR has 2 approvals'
+    value: ${{steps.approvals.outputs.approvals >= 2}}
+runs:
+  using: 'composite'
+  steps:
+    - uses: dayone-jp/approvals@main
+      id: approvals
+      env:
+        GITHUB_TOKEN: "token"
+    - run: echo ${{steps.approvals.outputs.approvals}}
+      shell: bash
 ```
-
-To run:
-
-```bash
-bun run index.js
-```
-
-This project was created using `bun init` in bun v0.5.8. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
