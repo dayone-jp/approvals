@@ -9695,7 +9695,7 @@ try {
 
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.setOutput(
     'approvals',
-    reviews.data.filter((r) => r.state === 'APPROVED'),
+    reviews.data.filter((r) => r.state === 'APPROVED').length,
   );
 } catch (error) {
   _actions_core__WEBPACK_IMPORTED_MODULE_0__.setFailed(error.message);
