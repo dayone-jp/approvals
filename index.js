@@ -4,7 +4,7 @@ import github from '@actions/github';
 try {
   const prNumber = github.context.payload.pull_request.number;
   const reviews = await github
-    .getOctokit(env.GITHUB_TOKEN)
+    .getOctokit(process.env.GITHUB_TOKEN)
     .request('GET /repos/{owner}/{repo}/pulls/{pull_number}/reviews', {
       ...github.context.repo,
       pull_number: prNumber,
