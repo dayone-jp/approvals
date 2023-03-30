@@ -1,0 +1,8 @@
+name: 'Approvals Counter'
+description: 'Count approvals of the provided PR'
+outputs:
+  approvals:
+    description: 'Number of approvals'
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
