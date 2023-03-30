@@ -20,6 +20,4 @@ runs:
       id: approvals
       env:
         GITHUB_TOKEN: "token"
-    - run: echo ${{steps.approvals.outputs.approvals}}
-      shell: bash
 ```
