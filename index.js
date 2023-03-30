@@ -12,7 +12,7 @@ try {
 
   core.setOutput(
     'approvals',
-    reviews.data.filter((r) => r.state === 'APPROVED').length,
+    reviews.data?.filter((r) => r.state === 'APPROVED')?.length ?? 0,
   );
 } catch (error) {
   core.setFailed(error.message);
