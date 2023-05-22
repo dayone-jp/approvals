@@ -1,4 +1,7 @@
 name: 'Approvals Counter'
+branding:
+  icon: 'check'
+  color: 'green'
 description: 'Count approvals of the provided PR'
 outputs:
   approvals:
